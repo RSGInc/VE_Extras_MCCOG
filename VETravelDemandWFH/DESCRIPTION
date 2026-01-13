@@ -31,7 +31,7 @@ Suggests:
     SLD
 VignetteBuilder: knitr
 Roxygen: list(load="source")
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Remotes:
     cities-lab/NHTS2009,
     cities-lab/SLD
