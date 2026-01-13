@@ -1,0 +1,28 @@
+Package: VEPowertrainsAndFuelsIndy
+Type: Package
+Title: Powertrains And Fuels updated for Central Indiana.
+Version: 1.0.0
+Date: 2025-05-30
+Author: Nick Fisher [aut, cre],
+Maintainer: Nick Fisher <nicholas.fisher@rsginc.com>
+Copyright: RSG
+Description: Powertrains And Fuels for Central Indiana
+License: file LICENSE
+LazyData: TRUE
+Depends: R (>= 3.6.0)
+Imports:
+    visioneval,
+    VE2001NHTS,
+    VEHouseholdTravel,
+    data.table
+Suggests:
+    knitr
+Encoding: UTF-8
+VignetteBuilder: knitr
+Roxygen: list(load='source')
+RoxygenNote: 7.3.2
+Collate: 
+    'LoadDefaultValues.R'
+    'AssignHhVehiclePowertrain.R'
+    'CalculateCarbonIntensity.R'
+    'Initialize.R'
