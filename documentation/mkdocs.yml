@@ -1,0 +1,10 @@
+site_name: MCCOG VE Model Documentation
+site_description: Documentation for the MCCOG VE Model
+site_author: RSG Inc.
+theme: readthedocs
+nav:
+  - Home: index.md
+  - Getting Started: old_index.md
+  - User Guide:
+      - Installation: user_guide/old_index.md
+
