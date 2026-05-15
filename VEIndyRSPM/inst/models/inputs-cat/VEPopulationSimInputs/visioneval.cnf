@@ -1,0 +1,28 @@
+VEPopulationSim:
+    PopSimDictionary: PopulationSim_DataDictionary.csv
+    VESimHouseholdDictionary: VESimHousehold_DataDictionary.csv
+    ACSYear: 2020
+    PopSimOutputDir:
+      2019: output_2019
+      2050: output_2050
+    PopSimFiles:
+      household_id: household_id
+      households:
+        filename: synthetic_households.csv
+        columns:
+          - NP            #Required
+          - NW            #Required
+          - HHINCADJ      #Required
+          - HTYPE         #Required
+          - ACCESSINET    #New
+          - AGEHOH        #New
+      persons:
+        filename: synthetic_persons.csv
+        columns:
+          - per_num        #Required
+          - AGEP           #Required
+          - PINCADJ        #Required
+          - WORKER         #Required
+          - occupation     #New
+          - COW            #New
+    BzoneField: B_ID

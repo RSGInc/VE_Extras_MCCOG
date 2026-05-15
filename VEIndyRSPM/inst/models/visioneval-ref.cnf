@@ -1,0 +1,29 @@
+Notes:
+- VisionEval.cnf for VEPopulationSim model; illustrating VEPopulationSim module
+- Model Structural Parameters: ScriptsDir, InputDir, ParamDir, Seed
+- Model Description: Model, Region, State, ModelStages
+- See individual ModelStages for scenario descriptions
+
+# Model Structural Parameters
+ScriptsDir  : scripts
+InputDir    : inputs # model_parameters.json is located here
+    # Full set of model inputs is included in model base directory
+    # InputPath in stages will look there first
+    # Stages include just the minimal input data they need to run
+ParamDir    : defs # default parameter location
+Seed        : 1  # Same seed used for all scenarios
+
+# Model description
+Model       : VERSPM 3.1 MultiModal, Telework, Custom Powertrain, PopulationSim
+Region      : IMPO and MCCOG
+State       : IN
+
+# Scenario description
+ModelScript    : run_model.R
+Scenario       : VERSPM Central Indiana MultiModal, Custom Powertrain, with telework, and PopulationSim
+Description    : IMPO VisionEval Model Reference inputs
+BaseYear       : 2019
+Years          : [ 2019, 2050 ]
+
+# Dynamic configuration
+VEPopulationSimDir   : VEPopulationSimInputs

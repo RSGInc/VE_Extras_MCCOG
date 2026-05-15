@@ -20,7 +20,11 @@ SET "App[4]=VESimLandUseDL"
 SET "App[5]=VETravelDemandMM"
 SET "App[6]=VETravelDemandWFH"
 SET "App[7]=VETravelPerformanceDL"
-SET "App[8]=All Modules"
+SET "App[8]=VEPowertrainsAndFuelsIndy"
+SET "App[9]=VEPowertrainsAndFuelsMCCOG2024"
+SET "App[10]=VEPowertrainsAndFuelsMCCOGEVS"
+SET "App[11]=VEPopulationSim"
+SET "App[12]=All Modules"
 
 :: Display Menu
 SET "Message="
@@ -87,8 +91,12 @@ IF "%App%" EQU "VESimLandUseDL" ECHO Installing %App% && CALL "%WHICH_R%\bin\R.e
 IF "%App%" EQU "VETravelDemandMM" ECHO Installing %App% && CALL "%WHICH_R%\bin\R.exe" CMD INSTALL -l "%VE_LIB%" "%~dp0\%App%"
 IF "%App%" EQU "VETravelDemandWFH" ECHO Installing %App% && CALL "%WHICH_R%\bin\R.exe" CMD INSTALL -l "%VE_LIB%" "%~dp0\%App%"
 IF "%App%" EQU "VETravelPerformanceDL" ECHO Installing %App% && CALL "%WHICH_R%\bin\R.exe" CMD INSTALL -l "%VE_LIB%" "%~dp0\%App%"
+IF "%App%" EQU "VEPowertrainsAndFuelsIndy" ECHO Installing %App% && CALL "%WHICH_R%\bin\R.exe" CMD INSTALL -l "%VE_LIB%" "%~dp0\%App%"
+IF "%App%" EQU "VEPowertrainsAndFuelsMCCOG2024" ECHO Installing %App% && CALL "%WHICH_R%\bin\R.exe" CMD INSTALL -l "%VE_LIB%" "%~dp0\%App%"
+IF "%App%" EQU "VEPowertrainsAndFuelsMCCOGEVS" ECHO Installing %App% && CALL "%WHICH_R%\bin\R.exe" CMD INSTALL -l "%VE_LIB%" "%~dp0\%App%"
+IF "%App%" EQU "VEPopulationSim" ECHO Installing %App% && CALL "%WHICH_R%\bin\R.exe" CMD INSTALL -l "%VE_LIB%" "%~dp0\%App%"
 IF "%App%" EQU "All Modules" (
-CALL :Process 1 2 3 4 5 6 7 8
+CALL :Process 1 2 3 4 5 6 7 8 9 10 11
 )
 
 :: Prevent the command from being processed twice if listed twice.

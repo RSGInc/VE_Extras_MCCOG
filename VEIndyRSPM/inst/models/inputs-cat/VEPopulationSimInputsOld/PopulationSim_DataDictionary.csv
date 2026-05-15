@@ -1,0 +1,6 @@
+﻿NAME,TABLE,GROUP,TYPE,UNITS,NAVALUE,PROHIBIT,ISELEMENTOF,DESCRIPTION
+ACCESSINET,Household,Year,integer,category,-1,"c("""")","c(1,2,3,4)",Access to internet
+AGEHOH,Household,Year,integer,integer,-1,"c(""NA"", ""< -1"")",,Age of head of households
+PINCADJ,Person,Year,currency,USD,-1,"c(""NA"", ""< 0"")",,Total annual personal income
+occupation,Person,Year,integer,category,-1,"c(""NA"", ""< -1"")",c(0:6),Occupation of person
+COW,Person,Year,integer,category,-1,"c(""NA"", ""< -1"")",c(1:9),Class of worker (PUMS 2020 definition)

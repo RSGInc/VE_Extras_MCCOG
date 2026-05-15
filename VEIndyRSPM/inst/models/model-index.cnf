@@ -1,0 +1,18 @@
+# Next Generation model with updated framework and export function
+# reproduces "base" VERSPM from VEModel, but provides alternate run script
+# to exercise the MultiModal features.
+VERSPM:
+  variants:
+    indy-popsim-ref:
+      description: VERSPM 3.1 with Population Sim, Work From Home Module, Driverless Module, and Central Indiana Powertrain
+      config: visioneval-ref.cnf
+      scripts: scripts-ref
+      inputs: inputs-ref
+      defs: defs
+    mccog-cat:
+      description: VERSPM 3.1 with Population Sim, Work From Home Module, Driverless Module, and Central Indiana Powertrain, Categorical Design
+      config: visioneval-cat.cnf
+      scripts: scripts-cat
+      inputs: inputs-cat
+      defs: defs
+      scenarios: scenarios-cat

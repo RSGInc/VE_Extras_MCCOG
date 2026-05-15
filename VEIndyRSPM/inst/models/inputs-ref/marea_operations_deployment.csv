@@ -1,0 +1,7 @@
+"Geo","Year","RampMeterDeployProp","IncidentMgtDeployProp","SignalCoordDeployProp","AccessMgtDeployProp","OtherFwyOpsDeployProp","OtherArtOpsDeployProp"
+0,2019,0,0,0,0,0,0
+0,2050,0,0,0,0,0,0
+1,2019,0.0307164379760879,1,1,0.25,0,0
+1,2050,0.0307164379760879,1,1,0.25,0,0
+2,2019,0,1,1,0,0,0
+2,2050,0,1,1,0,0,0

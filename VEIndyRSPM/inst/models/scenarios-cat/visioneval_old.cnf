@@ -1,0 +1,172 @@
+StartFrom   : "base-year-2019"       # StartFrom stage for ModelStages (adjust for your model)
+BaseScenario: "future-year-2050"     # Stage providing InputPath (optional: if not present use StartFrom)
+
+ScenarioElements:
+  - Name: U
+    ScenarioRoot: U       # If ScenarioRoot not provided, use scenario Name
+    Label: "Teleworking"
+    Description: "Change in teleworking  in MCCOG zones."
+    Files:
+      - region_teleworking.csv
+    Levels:
+      - Name: 1
+        LevelDir: 1       # If LevelDir not provided use level Name 
+        Label: "Increase"
+        Description: "Increase teleworking by 25%"
+      - Name: 2
+        LevelDir: 2       # If LevelDir not provided use level Name 
+        Label: "Decrease"
+        Description: "Decrease teleworking by 25%"
+  - Name: D
+    ScenarioRoot: D
+    Label: "Active travel"
+    Description: "Programs to encourage less private vehicle travel in MCCOG zones."
+    Files:
+      - azone_prop_sov_dvmt_diverted.csv
+    Levels:
+      - Name: 1
+        LevelDir: 1
+        Label: "Increase active travel"
+        Description: "Increased SOV diversion by 10%"
+  - Name: A
+    ScenarioRoot: A
+    Label: "AVs"
+    Description: "15% L5 use and 45% L3 use use in MCCOG zones"
+    Files:
+      - region_av_market_share.csv
+      - region_av_lev5_propensity_coef.csv
+      - azone_carsvc_characteristics.csv
+    Levels:
+      - Name: 1
+        LevelDir: 1
+        Label: "AVs"
+        Description: "15% L5 use and 45% L3 use use in MCCOG zones"
+  - Name: T
+    ScenarioRoot: T
+    Label: "Transit"
+    Description: "Increase transit frequency, service miles in MCCOG zones."
+    Files:
+      - marea_transit_service.csv
+      - bzone_transit_service.csv
+    Levels:
+      - Name: 1
+        LevelDir: 1
+        Label: "10% increase"
+        Description: "10% increase public transit service level."
+  - Name: P
+    ScenarioRoot: P
+    Label: "State pricing"
+    Description: "Introducing state pricing model region."
+    Files:
+      - azone_veh_use_taxes.csv
+    Levels:
+      - Name: 1
+        LevelDir: 1
+        Label: "Gas tax"
+        Description: "5 cent gas tax."
+      - Name: 2
+        LevelDir: 2
+        Label: "VMT tax"
+        Description: "2.5 cent VMT tax."
+  - Name: S
+    ScenarioRoot: S
+    Label: "Age Shifts"
+    Description: "Changes in Median Age Across Populations."
+    Files:
+      - VEPopulatoinSimInputs
+    Levels:
+      - Name: 1
+        LevelDir: 1
+        Label: "Increase"
+        Description: "Increase in median age of 1.5 yrs."
+      - Name: 2
+        LevelDir: 2
+        Label: "Decrease"
+        Description: "Decrease in median age of 1.5 yrs"
+  - Name: E
+    ScenarioRoot: E
+    Label: "Electrification"
+    Description: "Changes in Powertrain mix."
+    Files:
+      - VEPowertrainsAndFuels
+    Levels:
+      - Name: 1
+        LevelDir: 1
+        Label: "Maintain"
+        Description: "Maintain 2024 powertrain mix."
+      - Name: 2
+        LevelDir: 2
+        Label: "Increase"
+        Description: "Increase EV market share to 50%"
+
+ScenarioCategories:
+#  StartFrom: "stage-future" # or could just leave it out since it's the same as overall
+  Category:
+    - Name: "AVS"
+      Description: "Changes in automated vehicle deployment."
+      Levels: 
+        - Name: 1
+          Inputs: 
+            - Name: A
+              Level: 1
+    - Name: "ST"
+      Description: "State pricing changes."
+      Levels: 
+        - Name: 1
+          Inputs: 
+            - Name: P
+              Level: 1
+        - Name: 2
+          Inputs: 
+            - Name: P
+              Level: 2
+    - Name: "AT"
+      Description: "Active travel policies and transit."
+      Levels: 
+        - Name: 1
+          Inputs: 
+            - Name: D
+              Level: 1
+        - Name: 2
+          Inputs: 
+            - Name: T
+              Level: 1
+        - Name: 3
+          Inputs: 
+            - Name: D
+              Level: 1
+            - Name: T
+              Level: 1
+    - Name: "Tel"
+      Description: "Changes in teleworking."
+      Levels: 
+        - Name: 1
+          Inputs: 
+            - Name: U
+              Level: 1
+        - Name: 2
+          Inputs: 
+            - Name: U
+              Level: 2
+    - Name: "AS"
+      Description: "Shift in median age."
+      Levels: 
+        - Name: 1
+          Inputs: 
+            - Name: S
+              Level: 1
+        - Name: 2
+          Inputs: 
+            - Name: S
+              Level: 2
+    - Name: "EV"
+      Description: "Electification Powertrain Mix"
+      Levels: 
+        - Name: 1
+          Inputs: 
+            - Name: E
+              Level: 1
+        - Name: 2
+          Inputs: 
+            - Name: E
+              Level: 2

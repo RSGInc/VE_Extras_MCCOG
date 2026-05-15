@@ -1,0 +1,19 @@
+Package: VEIndyRSPM
+Type: Package
+Title: Model variants for the MCCOG MPO VERSPMs
+Version: 1.0
+Date: 2026-05-15
+Authors@R: c(person("Jonathan", "Slason", role=c("aut", "cre"), email="jonathan.slason@rsginc.com"), person("Nicholas", "Fisher", role=c("ctb"), email="nicholas.fisher@rsginc.com"))
+Maintainer: RSG  <jonathan.slason@rsginc.com>
+Copyright: MCCOG
+URL: http://www.rsginc.com
+Description: This package contains the Climate Office model variants for the MCCOG MPO.
+License: file LICENSE
+LazyData: TRUE
+Encoding: UTF-8
+Depends: R (>= 3.6.0)
+VignetteBuilder: knitr
+Roxygen: list(load="source")
+RoxygenNote: 7.2.3
+Remotes:
+
